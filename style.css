@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e6e6e6;
+}
+
+.swiper {
+  width: 700px;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  transform: translateY(-50%);
+}
+
+button {
+  opacity: 0;
+  visibility: hidden;
+  height: 50px;
+  width: 50px;
+  border: none;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  color: white;
+  border-radius: 100%;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.swiper:hover button {
+  opacity: 1;
+  visibility: visible;
+}
+
+.swiper,
+.swiper * {
+  transition: all 0.3s ease;
+}

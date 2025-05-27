@@ -73,8 +73,12 @@ body {
   background-color: var(--white);
   padding: 0 20px;
   border-radius: 20px;
+  display: none;
 }
 
+.swiper:hover .pagination {
+  display: flex;
+}
 .pagination button {
   background-color: black;
   color: white;

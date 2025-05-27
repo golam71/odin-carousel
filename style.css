@@ -25,7 +25,16 @@ body {
   overflow: hidden;
 }
 
+.swiper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 .btn-container {
+  z-index: 2;
   position: absolute;
   top: 50%;
   left: 0;
@@ -41,8 +50,8 @@ body {
   font-weight: bold;
   opacity: 0;
   visibility: hidden;
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   text-align: center;
   border: none;
   background-color: #e6e6e6;
@@ -64,20 +73,23 @@ body {
 }
 
 .swiper .pagination {
+  z-index: 2;
   position: absolute;
   left: 50%;
   top: 95%;
+  display: flex;
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   background-color: var(--white);
-  padding: 0 20px;
+  padding: 0px 20px;
   border-radius: 20px;
-  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .swiper:hover .pagination {
-  display: flex;
+  opacity: 1;
 }
 .pagination button {
   background-color: black;
@@ -85,10 +97,26 @@ body {
   border: none;
   display: flex;
   border-radius: 100%;
-  height: 10px;
-  width: 10px;
+  height: 15px;
+  width: 15px;
   margin: 5px;
 }
 .swiper-hidden {
   display: none;
+}
+
+.active {
+  background-color: blue !important;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .btn-container button,
+  .swiper .pagination {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+.swiper img.active-image {
+  opacity: 1;
+  z-index: 1;
 }

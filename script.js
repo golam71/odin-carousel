@@ -27,6 +27,7 @@ hideAllImage();
 showImage(list[0]);
 
 let number = 0;
+setButton(0);
 
 function next() {
   number++;
@@ -84,15 +85,12 @@ let intervalId;
 function startLogging() {
   intervalId = setInterval(() => {
     next();
-    console.log(1);
-  }, 2000);
+  }, 5000);
 }
 
 function stopLogging() {
   clearInterval(intervalId);
 }
 
-startLogging();
-
 document.querySelector(".swiper").addEventListener("mouseover", stopLogging);
-document.querySelector(".swiper").addEventListener("mouseleave", startLogging);
+document.querySelector(".swiper").addEventListener("mouseleave", stopLogging);

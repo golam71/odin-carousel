@@ -13,7 +13,7 @@
         <img src="./public/darkflower.png" alt="Dark Flower">
         <img src="./public/flower0.jpg" alt="Flower 0">
         <img src="./public/flower2.jpeg" alt="Flower 2">
-    
+
         <img src="./public/lilyflower.jpg" alt="Lily Flower">
         <img src="./public/sunflower.jpg" alt="Sunflower">
         <img src="./public/darkpinkflower.png" alt="Dark Pink Flower">
@@ -40,10 +40,11 @@
 
 </body>
 <!-- <script src="./script.js"></script> -->
-<script src="./swiper.js"></script>
-<script>
-    let swiperEl = document.querySelectorAll(".swiper").forEach(item => {
-        setSwiper(item)
+<!-- <script src="./swiper.js"></script> -->
+<script type="module">
+    import { SliderJs } from "./slider.js"
+    document.querySelectorAll(".swiper").forEach(item => {
+        new SliderJs(item, 1000)
     })
 
 </script>

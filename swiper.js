@@ -35,7 +35,7 @@ function setSwiper(element) {
   showImage(0);
 
   function hideAllImages() {
-    console.log(list);
+    // console.log(list);
     list.forEach((img) => {
       img.classList.remove("active-image");
     });
@@ -76,4 +76,19 @@ function setSwiper(element) {
 
   element.querySelector(".next").onclick = () => next();
   element.querySelector(".prev").onclick = () => next();
+
+  let intervalId;
+
+  function startLogging() {
+    intervalId = setInterval(() => {
+      next();
+    }, 2000);
+  }
+
+  function stopLogging() {
+    clearInterval(intervalId);
+  }
+  startLogging();
+  element.addEventListener("mouseover", stopLogging);
+  element.addEventListener("mouseleave", startLogging);
 }

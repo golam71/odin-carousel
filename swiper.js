@@ -66,10 +66,12 @@ function setSwiper(element) {
   function previous() {
     currentIndex--;
     hideAllImages();
-    if (currentIndex == list.length) {
-      currentIndex = this.length;
+
+    if (currentIndex < 0) {
+      currentIndex = list.length - 1;
     }
     clearButtons();
+    // console.log(currentIndex);
     setButton(currentIndex);
     showImage(currentIndex);
   }

@@ -75,7 +75,7 @@ function setSwiper(element) {
   }
 
   element.querySelector(".next").onclick = () => next();
-  element.querySelector(".prev").onclick = () => next();
+  element.querySelector(".prev").onclick = () => previous();
 
   let intervalId;
 
